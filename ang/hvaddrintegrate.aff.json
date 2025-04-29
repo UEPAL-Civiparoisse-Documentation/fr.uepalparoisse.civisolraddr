@@ -1,0 +1,10 @@
+{
+  "type": "system",
+  "name":"hvaddrintegrate",
+  "requires": ["hvaddr","hvaddrdialog","crmUi", "crmUtil", "ngRoute","af","afCore","crmDialog","afformStandalone"],
+  "placement": [],
+  "icon": "fa-list-alt",
+  "permission_operator": "AND",
+  "server_route": "civicrm/hvaddrintegrate",
+  "permission": ['access CiviCRM',"update address"]
+}

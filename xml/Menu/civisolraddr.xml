@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/smartyintegrate</path>
+    <title>HVADDR Smarty Integrate</title>
+    <page_callback>CRM_Civisolraddr_Page_TestPage</page_callback>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/civisolraddr/pingcores</path>
+    <title>Ping Registered Cores</title>
+    <page_callback>CRM_Civisolraddr_Page_PingPage</page_callback>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>

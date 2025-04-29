@@ -1,0 +1,27 @@
+{
+    "type": "search",
+    "title": "Banaddr : all records",
+    "placement": [],
+    "icon": "fa-list-alt",
+    "server_route": "civicrm/banaddr/afform/all-records",
+    "permission": [
+        "access CiviCRM"
+    ],
+    "permission_operator": "AND",
+    "modified_date": "2025-01-05 23:45:25",
+    "requires": null,
+    "entity_type": null,
+    "join_entity": null,
+    "description": null,
+    "summary_contact_type": null,
+    "summary_weight": null,
+    "is_public": false,
+    "redirect": null,
+    "submit_enabled": true,
+    "submit_limit": null,
+    "create_submission": null,
+    "manual_processing": null,
+    "allow_verification_by_email": null,
+    "email_confirmation_template_id": null,
+    "navigation": null
+}

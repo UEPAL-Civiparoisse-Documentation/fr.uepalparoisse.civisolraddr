@@ -1,0 +1,29 @@
+{
+  "name": "uepal/fr.uepalparoisse.civisolraddr",
+  "description": "Extension CiviCRM Uepal-Civisolraddr",
+  "license":"AGPL-3.0",
+  "type":"civicrm-ext",
+  "require":{
+    "ext-solr":"*",
+    "psr/log":"~1.0 || ~2.0 || ~3.0"
+  },
+  "require-dev":{
+    "civicrm/civix":"^24"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "civicrm/composer-downloads-plugin": true,
+      "civicrm/composer-compile-plugin": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Civi\\Api4": ["Civi","Api4"]
+    },
+    "psr-0": {
+      "CRM_Civisolraddr": ["CRM","Civisolraddr"]
+    }
+  }
+}

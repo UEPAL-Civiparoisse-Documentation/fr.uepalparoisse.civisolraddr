@@ -1,0 +1,13 @@
+<af-form ctrl="afform">
+  <af-entity name="HVAddr" type="HVAddr" actions="{create: false, update: false}" security="FBAC" url-autofill="0" ctrl="afform"/>
+  <fieldset af-fieldset="HVAddr">
+    <af-field name="dept" />
+    <af-field name="city" />
+    <af-field name="street"/>
+    <af-field name="numrep"/>
+    <af-field name="postcode"/>
+  </fieldset>
+  <button ng-click="$parent.$parent.$dialog.cancel()">Annuler</button>
+  <button ng-click="$parent.$parent.$dialog.close(afform.getData('HVAddr'))">Valider</button>
+</af-form>
+

@@ -1,0 +1,12 @@
+{
+  "type": "system",
+  "name":"hvaddr",
+  "entity_type": "HVAddr",
+  "title": "HVAddr",
+  "requires": ["hvaddrblock","crmUi", "crmUtil", "ngRoute","af","afCore","crmDialog","afformStandalone"],
+  "placement": [],
+  "icon": "fa-list-alt",
+  "server_route": "civicrm/hvaddr",
+  "permission_operator": "AND",
+  "permission": ['access CiviCRM',"update address"]
+}

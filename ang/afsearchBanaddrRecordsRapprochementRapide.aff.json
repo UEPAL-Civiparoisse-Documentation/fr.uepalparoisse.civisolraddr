@@ -1,0 +1,13 @@
+{
+    "type": "search",
+    "title": "Banaddr Records : Rapprochement rapide",
+    "placement": [],
+    "icon": "fa-list-alt",
+    "server_route": "civicrm/banaddr/afform/unchecked-operations",
+    "permission": [
+        "access CiviCRM"
+    ],
+    "permission_operator": "AND",
+    "navigation": null
+
+}

@@ -1,0 +1,11 @@
+{
+  "type": "block",
+  "name":"hvaddrblock",
+  "entity_type": "HVAddr",
+  "title": "HVAddr",
+  "requires": ["crmUi", "crmUtil", "ngRoute","af","afCore","crmDialog","afformStandalone"],
+  "placement": [],
+  "icon": "fa-list-alt",
+  "permission_operator": "AND",
+  "permission": ['access CiviCRM',"update address"]
+}

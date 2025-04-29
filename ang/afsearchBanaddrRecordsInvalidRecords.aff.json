@@ -1,0 +1,12 @@
+{
+    "type": "search",
+    "title": "Banaddr Records : Invalid Records",
+    "placement": [],
+    "icon": "fa-list-alt",
+    "server_route": "civicrm/banaddr/afform/invalid-records",
+    "permission": [
+        "access CiviCRM"
+    ],
+    "permission_operator": "AND",
+    "navigation": null
+}
