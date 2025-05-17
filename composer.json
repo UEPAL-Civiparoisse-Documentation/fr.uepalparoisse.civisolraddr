@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Civi\\Api4": ["Civi","Api4"]
+      "Civi\\Api4\\": ["Civi","Api4"]
     },
     "psr-0": {
       "CRM_Civisolraddr": ["CRM","Civisolraddr"]
