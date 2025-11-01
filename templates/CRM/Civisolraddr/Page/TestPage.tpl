@@ -1,6 +1,6 @@
 <crm-angular-js modules="hvaddrdialog">
   <div class="addrvirtualcontainer">
-    <button name="show_hvaddr" type="button" hvaddr-dialog-popup="hvaddrdialog">Afficher HVAddr</button>
+    <button name="show_hvaddr" type="button" hvaddr-dialog-popup="hvaddrdialog">Assistant</button>
   </div>
   <script type="text/javascript">
     CRM.$("div.addrvirtualcontainer").on("hvaddrdialog", function (event, data) {

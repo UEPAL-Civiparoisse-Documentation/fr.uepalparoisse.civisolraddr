@@ -159,12 +159,28 @@ class CRM_Civisolraddr_SolrClient implements CRM_Civisolraddr_ISolrClient
         $response = $client->query($q);
         $response->setParseMode(SolrResponse::PARSE_SOLR_OBJ);
         $solrObj = $response->getResponse();
+        $spelled = $solrObj['spellcheck']['correctlySpelled'];
+        if ($spelled)//donc on le met au début
+        {
+          $ret[] = $city;
+        }
+        //on continue avec les suggestions (du genre auto-complétion)
         foreach ($solrObj['suggest'] as $suggester) {
           foreach ($suggester as $term) {
             foreach ($term['suggestions'] as $suggestion) {
               $ret[] = $suggestion['payload'];
             }
           }
+        }
+        //et enfin on finit avec la correction
+        if (!$spelled) {
+
+          foreach ($solrObj['spellcheck']['suggestions'] as $suggeststruct) {
+            foreach ($suggeststruct['suggestion'] as $sug) {
+              $ret[] = $sug['word'];
+            }
+          }
+
         }
       }
     } catch (Exception $e) {
@@ -183,19 +199,24 @@ class CRM_Civisolraddr_SolrClient implements CRM_Civisolraddr_ISolrClient
 
       if ($query && $query->getCity() && $query->getAddr() && $query->getDept() && $this->isEnabled()
         && $this->isDepartementAvailable($query->getDept())
-        && $this->spellcheck($query->getCity(), $query->getDept()) == CRM_Civisolraddr_SpellcheckResult::RIGHT) {
-        $client = $this->getSolrClient();
-        $core = $this->retrieveCore($query->getDept());
-        $handler = join('/', [$this->retrieveCore($query->getDept()), $this->getSearchHandler()]);
-        $client->setServlet(SolrClient::SEARCH_SERVLET_TYPE, $handler);
-        $q = new SolrQuery(SolrUtils::escapeQueryChars($query->getAddr()));
-        $q->addFilterQuery("nom_commune:" . SolrUtils::queryPhrase($query->getCity()));
-        $response = $client->query($q);
-        $response->setParseMode(SolrResponse::PARSE_SOLR_DOC);
-        $solrObj = $response->getResponse();
-        $docs = $solrObj["response"]["docs"];
-        foreach ($docs as $doc) {
-          $ret[] = new CRM_Civisolraddr_Banaddr_Document($doc);
+        )
+      {
+        $citySuggests=$this->suggest($query->getCity(), $query->getDept());
+        if(count($citySuggests)>0) {
+          $city=$citySuggests[0];
+          $client = $this->getSolrClient();
+          $core = $this->retrieveCore($query->getDept());
+          $handler = join('/', [$this->retrieveCore($query->getDept()), $this->getSearchHandler()]);
+          $client->setServlet(SolrClient::SEARCH_SERVLET_TYPE, $handler);
+          $q = new SolrQuery(SolrUtils::escapeQueryChars($query->getAddr()));
+          $q->addFilterQuery("nom_commune:" . SolrUtils::queryPhrase($city));
+          $response = $client->query($q);
+          $response->setParseMode(SolrResponse::PARSE_SOLR_DOC);
+          $solrObj = $response->getResponse();
+          $docs = $solrObj["response"]["docs"];
+          foreach ($docs as $doc) {
+            $ret[] = new CRM_Civisolraddr_Banaddr_Document($doc);
+          }
         }
       }
     } catch (Exception $e) {

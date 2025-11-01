@@ -21,7 +21,9 @@ return [
             'numero',
             'rep',
             'nom_voie',
+            'nom_commune',
             'Banaddr_Address_addr_id_01.street_address',
+            'Banaddr_Address_addr_id_01.city',
           ],
           'orderBy' => [],
           'where' => [
@@ -112,6 +114,20 @@ return [
               'label' => E::ts('Banaddr Id. de l\'adresse: Rue'),
               'sortable' => TRUE,
             ],
+            [
+              'type' => 'field',
+              'key' => 'nom_commune',
+              'dataType' => 'String',
+              'label' => E::ts('Nom commune'),
+              'sortable' => TRUE,
+            ],
+            [
+              'type' => 'field',
+              'key' => 'Banaddr_Address_addr_id_01.city',
+              'dataType' => 'String',
+              'label' => E::ts('Banaddr Id. de l\'adresse: Ville'),
+              'sortable' => TRUE,
+            ]
           ],
           'actions' => ['setValid','setInvalid', 'delete'],
           'classes' => ['table', 'table-striped'],

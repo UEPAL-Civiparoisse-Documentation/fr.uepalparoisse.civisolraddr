@@ -15,7 +15,7 @@ function smarty_prefilter_civisolraddr(string $tpl_source, \Smarty\Template $tem
 <td colspan="2">
 <crm-angular-js modules="hvaddrdialog">
   <div class="addrvirtualcontainer">
-    <button name="show_hvaddr" type="button" hvaddr-dialog-popup="hvaddrdialog" block-id="{$blockId}">Afficher HVAddr</button>
+    <button name="show_hvaddr" type="button" hvaddr-dialog-popup="hvaddrdialog" block-id="{$blockId}">Assistant</button>
   </div>
   <script type="text/javascript">
     CRM.$("div.addrvirtualcontainer").on("hvaddrdialog", function (event, data) {
