@@ -15,13 +15,13 @@ function smarty_prefilter_civisolraddr(string $tpl_source, \Smarty\Template $tem
 <td colspan="2">
 <crm-angular-js modules="hvaddrdialog">
   <div class="addrvirtualcontainer">
-    <button name="show_hvaddr" type="button" hvaddr-dialog-popup="hvaddrdialog" block-id="{$blockId}">Assistant</button>
+    <button name="show_hvaddr" type="button" hvaddr-dialog-popup="hvaddrdialog" block-id="{$blockId}" title="Fenêtre de saisie de l'adresse">Assistant de saisie de l'adresse</button>
   </div>
   <script type="text/javascript">
     CRM.$("div.addrvirtualcontainer").on("hvaddrdialog", function (event, data) {
-      console.log("hvaddrDialogPopup");
+      /*console.log("hvaddrDialogPopup");
       console.log(data);
-      window.alert(JSON.stringify(data));
+      window.alert(JSON.stringify(data));*/
     });
   </script>
 </crm-angular-js>
@@ -99,6 +99,7 @@ $tasks['Banaddr']=[];
 if(!$checkPermissions || ($checkPermissions && CRM_Core_Permission::check(['access CiviCRM']))) {
   $tasks['Banaddr']['setValid'] = [
     'title' => E::ts('Set Valid'),
+    'icon'=> 'fa-check-square',
     'apiBatch' => [
       'action' => 'setValid',
       'params' => NULL, // Optional array of additional api params
@@ -110,6 +111,7 @@ if(!$checkPermissions || ($checkPermissions && CRM_Core_Permission::check(['acce
   ];
   $tasks['Banaddr']['setInvalid'] = [
     'title' => E::ts('Set Invalid'),
+    'icon'=>'fa-times',
     'apiBatch' => [
       'action' => 'setInvalid',
       'params' => NULL, // Optional array of additional api params
@@ -123,6 +125,7 @@ if(!$checkPermissions || ($checkPermissions && CRM_Core_Permission::check(['acce
 if(!$checkPermissions || ($checkPermissions && CRM_Core_Permission::check(['administer CiviCRM']))) {
   $tasks['Banaddr']['setStale'] = [
     'title' => E::ts('Set Stale'),
+    'icon' => 'fa-fill-drip',
     'apiBatch' => [
       'action' => 'setStale',
       'params' => NULL, // Optional array of additional api params
@@ -134,6 +137,7 @@ if(!$checkPermissions || ($checkPermissions && CRM_Core_Permission::check(['admi
   ];
   $tasks['Banaddr']['setUnchecked'] = [
     'title' => E::ts('Set Unchecked'),
+    'icon' => 'fa-question',
     'apiBatch' => [
       'action' => 'setUnchecked',
       'params' => NULL, // Optional array of additional api params
@@ -149,14 +153,14 @@ if(!$checkPermissions || ($checkPermissions && CRM_Core_Permission::check(['admi
 function civisolraddr_civicrm_navigationmenu(&$menu)
 {
   _civisolraddr_civix_insert_navigation_menu($menu,'',
-   [ 'label'=>ts('UEPAL Civisolraddr'),
+   [ 'label'=>E::ts('UEPAL Civisolraddr'),
      'name'=>'uepal_civisolraddr',
      'permission'=>'access CiviCRM'
 
    ]);
 
   _civisolraddr_civix_insert_navigation_menu($menu,'uepal_civisolraddr',
-   [ 'label'=>ts('Banaddr : Rapprochement Rapide'),
+   [ 'label'=>E::ts('Banaddr : Rapprochement Rapide'),
      'name'=>'banaddr_uncheck_records',
      'permission'=>'access CiviCRM',
      'url'=>'civicrm/banaddr/afform/unchecked-operations',
@@ -164,15 +168,15 @@ function civisolraddr_civicrm_navigationmenu(&$menu)
    ]);
 
  _civisolraddr_civix_insert_navigation_menu($menu,'uepal_civisolraddr',
-   [ 'label'=>ts('Banaddr : Stale Records'),
+   [ 'label'=>E::ts('Banaddr : Stale Records'),
      'name'=>'banaddr_stale_records',
-     'permission'=>'access CiviCRM',
+     'permission'=>'administer CiviCRM',
      'url'=>'civicrm/banaddr/afform/stale-records',
      'active'=>1
    ]);
 
  _civisolraddr_civix_insert_navigation_menu($menu,'uepal_civisolraddr',
-   [ 'label'=>ts('Banaddr : Invalid Records'),
+   [ 'label'=>E::ts('Banaddr : Invalid Records'),
      'name'=>'banaddr_invalid_records',
      'permission'=>'access CiviCRM',
      'url'=>'civicrm/banaddr/afform/invalid-records',
@@ -180,7 +184,7 @@ function civisolraddr_civicrm_navigationmenu(&$menu)
    ]);
 
  _civisolraddr_civix_insert_navigation_menu($menu,'uepal_civisolraddr',
-   [ 'label'=>ts('Banaddr : all records'),
+   [ 'label'=>E::ts('Banaddr : all records'),
      'name'=>'banaddr_all_records',
      'permission'=>'access CiviCRM',
      'url'=>'civicrm/banaddr/afform/all-records',
@@ -188,9 +192,9 @@ function civisolraddr_civicrm_navigationmenu(&$menu)
    ]);
 
  _civisolraddr_civix_insert_navigation_menu($menu,'uepal_civisolraddr',
-   [ 'label'=>ts('Ping Registered Cores'),
+   [ 'label'=>E::ts('Ping Registered Cores'),
      'name'=>'civisolraddr_ping_registered_cores',
-     'permission'=>'access CiviCRM',
+     'permission'=>'administer CiviCRM',
      'url'=>'civicrm/civisolraddr/pingcores',
      'active'=>1
 
@@ -237,3 +241,11 @@ function civisolraddr_civicrm_selectWhereClause(string $entity, array &$clauses,
   }
 
 }
+
+function civisolraddr_civicrm_alterBundle(CRM_Core_Resources_Bundle $bundle)
+{
+  if ($bundle->name === 'coreStyles') {
+    $bundle->addStyleFile(E::LONG_NAME, 'css/civisolraddr.css');
+  }
+}
+

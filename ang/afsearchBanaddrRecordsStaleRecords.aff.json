@@ -1,11 +1,11 @@
 {
     "type": "search",
-    "title": "Banaddr Records : Stale records",
+    "title": "Adresses obsolètes",
     "placement": [],
     "icon": "fa-list-alt",
     "server_route": "civicrm/banaddr/afform/stale-records",
     "permission": [
-        "access CiviCRM"
+        "administer CiviCRM"
     ],
     "permission_operator": "AND",
     "navigation": null

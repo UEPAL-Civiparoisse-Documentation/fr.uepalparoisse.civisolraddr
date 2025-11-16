@@ -1,0 +1,15 @@
+.civisolraddr-validation-valid{
+  background-color:green;
+}
+.civisolraddr-validation-invalid{
+  background-color:red;
+}
+.civisolraddr-validation-stale{
+  background-color:red;
+}
+.civisolraddr-validation-unchecked{
+  background-color:yellow;
+}
+.civisolraddr-validation-default{
+  background-color:purple;
+}

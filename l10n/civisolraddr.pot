@@ -1,0 +1,431 @@
+#: ./Civi/Api4/Actions/HVAddr/Fields.php
+msgid "Departement"
+msgstr ""
+
+#: ./Civi/Api4/Actions/HVAddr/Fields.php
+msgid "City"
+msgstr ""
+
+#: ./Civi/Api4/Actions/HVAddr/Fields.php
+msgid "Street"
+msgstr ""
+
+#: ./Civi/Api4/Actions/HVAddr/Fields.php
+msgid "numrep"
+msgstr ""
+
+#: ./Civi/Api4/Actions/HVAddr/Fields.php
+msgid "Numrep"
+msgstr ""
+
+#: ./Civi/Api4/Actions/HVAddr/Fields.php
+msgid "postcode"
+msgstr ""
+
+#: ./Civi/Api4/Actions/HVAddr/Fields.php
+msgid "Postcode"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Set Valid"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Are you sure you want to set valid %1 %2?"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Setting valid %1 %2..."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Successfully valid set %1 %2."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "An error occurred while attempting to set valid %1 %2."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Set Invalid"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Are you sure you want to set invalid on %1 %2?"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Setting invalid on %1 %2..."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Successfully invalid set on %1 %2."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "An error occurred while attempting to set invalid %1 %2."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Set Stale"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Are you sure you want to set stale on %1 %2?"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Setting stale on %1 %2..."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Successfully stale set on %1 %2."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "An error occurred while attempting to set stale %1 %2."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Set Unchecked"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Are you sure you want to set unchecked on %1 %2?"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Setting unchecked on %1 %2..."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Successfully unchecked set on %1 %2."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "An error occurred while attempting to set unchecked on %1 %2."
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "UEPAL Civisolraddr"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Banaddr : Rapprochement Rapide"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Banaddr : Stale Records"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Banaddr : Invalid Records"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Banaddr : all records"
+msgstr ""
+
+#: ./civisolraddr.php
+msgid "Ping Registered Cores"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Invalid.mgd.php
+msgid "Banaddr : Invalid"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Invalid.mgd.php
+msgid "Banaddr : Invalid Table"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Invalid.mgd.php ./managed/SavedSearch_Banaddr_Records_Common_data.mgd.php ./managed/SavedSearch_Banaddr_Records_Stale.mgd.php ./managed/SavedSearch_Rapprochement_rapide.mgd.php ./schema/banaddr.entityType.php
+msgid "ID"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Invalid.mgd.php ./managed/SavedSearch_Banaddr_Records_Common_data.mgd.php ./managed/SavedSearch_Banaddr_Records_Stale.mgd.php ./managed/SavedSearch_Rapprochement_rapide.mgd.php
+msgid "Id. de l'adresse"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Invalid.mgd.php
+msgid "Id. de l'adresse Rue"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Invalid.mgd.php ./managed/SavedSearch_Banaddr_Records_Stale.mgd.php ./schema/banaddr.entityType.php
+msgid "modified"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Records_Common_data.mgd.php
+msgid "Banaddr Records Common data"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Records_Common_data.mgd.php ./schema/banaddr.entityType.php
+msgid "Validation"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Records_Common_data.mgd.php ./managed/SavedSearch_Rapprochement_rapide.mgd.php ./schema/banaddr.entityType.php
+msgid "Numéro"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Records_Common_data.mgd.php ./managed/SavedSearch_Rapprochement_rapide.mgd.php ./schema/banaddr.entityType.php
+msgid "Répéteur"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Records_Common_data.mgd.php ./managed/SavedSearch_Rapprochement_rapide.mgd.php ./schema/banaddr.entityType.php
+msgid "Nom voie"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Records_Common_data.mgd.php ./schema/banaddr.entityType.php
+msgid "Code postal"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Records_Common_data.mgd.php ./managed/SavedSearch_Rapprochement_rapide.mgd.php ./schema/banaddr.entityType.php
+msgid "Nom commune"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Records_Common_data.mgd.php ./schema/banaddr.entityType.php
+msgid "numero_departement"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Records_Stale.mgd.php
+msgid "Banaddr Records : Stale"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Records_Stale.mgd.php
+msgid "Banaddr Records : Stale Table"
+msgstr ""
+
+#: ./managed/SavedSearch_Banaddr_Records_Stale.mgd.php ./managed/SavedSearch_Rapprochement_rapide.mgd.php
+msgid "Banaddr Id. de l'adresse: Rue"
+msgstr ""
+
+#: ./managed/SavedSearch_Rapprochement_rapide.mgd.php
+msgid "Banaddr Records : Rapprochement rapide"
+msgstr ""
+
+#: ./managed/SavedSearch_Rapprochement_rapide.mgd.php
+msgid "Rapprochement rapide Table"
+msgstr ""
+
+#: ./managed/SavedSearch_Rapprochement_rapide.mgd.php
+msgid "Banaddr Id. de l'adresse: Ville"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Banaddr"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Banaddrs"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "BAN Addr records"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Unique Banaddr ID"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "record id"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "solr record id"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Address ID"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "FK to Address"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Validation status"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "ID Fantoir"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Code INSEE"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Code INSEE ancienne commune"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Nom ancienne commune"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "proj_leg_x"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "proj_leg_y"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "gps_lon"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "gps_lat"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Type position"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "alias"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "nom lieu dit"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "libellé acheminement"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Nom AFNOR"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Source position"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Source nom voie"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Certification commune"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "cad_parcelles"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "numero_rep"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "Source HTTP header modified"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "is_even"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "is numero even"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "is_odd"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "is numero odd"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "neg_numero_odd"
+msgstr ""
+
+#: ./schema/banaddr.entityType.php
+msgid "neg_numero_even"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "solr hostname"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "DNS Resolvable solr hostname"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "solr port"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "solr base path"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "Root base url path, without trailing slash"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "spellcheck handler"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "Handler to spellcheck cities"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "search handler"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "Handler to query addresses"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "ping handler"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "Handler to ping"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "registered cores"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "Registered cores by departement - json object"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "ssl capath"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "Absolute path of the CA file"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "Use solr"
+msgstr ""
+
+#: ./settings/civisolraddr.setting.php
+msgid "Enable usage of solr"
+msgstr ""
+
+#: ./CRM/Civisolraddr/Banaddr/Validation.php
+msgid "unchecked"
+msgstr ""
+
+#: ./CRM/Civisolraddr/Banaddr/Validation.php
+msgid "valid"
+msgstr ""
+
+#: ./CRM/Civisolraddr/Banaddr/Validation.php
+msgid "invalid"
+msgstr ""
+
+#: ./CRM/Civisolraddr/Banaddr/Validation.php
+msgid "stale"
+msgstr ""

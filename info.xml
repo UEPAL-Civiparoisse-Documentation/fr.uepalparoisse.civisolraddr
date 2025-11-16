@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <extension key="fr.uepalparoisse.civisolraddr" type="module">
   <file>civisolraddr</file>
-  <name>fr.uepalparoisse.civisolraddr</name>
+  <name>civisolraddr</name>
   <description>FIXME</description>
   <license>AGPL-3.0</license>
   <authors>
@@ -23,7 +23,7 @@
   <compatibility>
     <ver>5.79</ver>
   </compatibility>
-  <comments>This is a new, undeveloped module</comments>
+  <comments>Extension pour la normalisation des adresses</comments>
   <classloader>
     <psr0 prefix="CRM_" path="."/>
     <psr4 prefix="Civi\" path="Civi"/>

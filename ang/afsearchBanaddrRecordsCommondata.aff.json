@@ -1,6 +1,6 @@
 {
     "type": "search",
-    "title": "Banaddr : all records",
+    "title": "Adresses : toutes les propositions",
     "placement": [],
     "icon": "fa-list-alt",
     "server_route": "civicrm/banaddr/afform/all-records",

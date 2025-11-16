@@ -1,6 +1,6 @@
 {
     "type": "search",
-    "title": "Banaddr Records : Rapprochement rapide",
+    "title": "Validation des propositions d'adresses",
     "placement": [],
     "icon": "fa-list-alt",
     "server_route": "civicrm/banaddr/afform/unchecked-operations",

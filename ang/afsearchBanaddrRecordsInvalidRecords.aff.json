@@ -1,6 +1,6 @@
 {
     "type": "search",
-    "title": "Banaddr Records : Invalid Records",
+    "title": "Adresses erronées, à corriger",
     "placement": [],
     "icon": "fa-list-alt",
     "server_route": "civicrm/banaddr/afform/invalid-records",
