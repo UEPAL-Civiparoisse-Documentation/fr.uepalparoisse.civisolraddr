@@ -6,7 +6,7 @@ return [
     'name' => 'SavedSearch_Banaddr_Records_Stale',
     'entity' => 'SavedSearch',
     'cleanup' => 'always',
-    'update' => 'unmodified',
+    'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
@@ -65,7 +65,7 @@ return [
     'name' => 'SavedSearch_Banaddr_Records_Stale_SearchDisplay_Banaddr_Records_Stale_Table',
     'entity' => 'SearchDisplay',
     'cleanup' => 'always',
-    'update' => 'unmodified',
+    'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
@@ -160,10 +160,7 @@ return [
               'label' => E::ts("Modifier l'adresse"),
             ],
           ],
-          'actions' => [
-            'download',
-            'delete',
-          ],
+          'actions' => [],
           'classes' => [
             'table',
             'table-striped',

@@ -6,7 +6,7 @@ return [
     'name' => 'SavedSearch_Rapprochement_rapide',
     'entity' => 'SavedSearch',
     'cleanup' => 'always',
-    'update' => 'unmodified',
+    'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
@@ -26,6 +26,8 @@ return [
             'Banaddr_Address_addr_id_01.city',
             'Banaddr_Address_addr_id_01.contact_id',
             'Banaddr_Address_addr_id_01_Address_Contact_contact_id_01.sort_name',
+            'match_street',
+            'match_city',
           ],
           'orderBy' => [],
           'where' => [
@@ -68,7 +70,7 @@ return [
     'name' => 'SavedSearch_Rapprochement_rapide_SearchDisplay_Rapprochement_rapide_Table_1',
     'entity' => 'SearchDisplay',
     'cleanup' => 'always',
-    'update' => 'unmodified',
+    'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
@@ -115,6 +117,20 @@ return [
               'dataType' => 'String',
               'label' => E::ts('Saisie : rue'),
               'sortable' => TRUE,
+              'cssRules' => [
+                [
+                  'bg-danger',
+                  'match_street',
+                  '=',
+                  FALSE,
+                ],
+                [
+                  'bg-success',
+                  'match_street',
+                  '=',
+                  TRUE,
+                ],
+              ],
             ],
             [
               'type' => 'field',
@@ -129,6 +145,20 @@ return [
               'dataType' => 'String',
               'label' => E::ts('Saisie : ville'),
               'sortable' => TRUE,
+              'cssRules' => [
+                [
+                  'bg-danger',
+                  'match_city',
+                  '=',
+                  FALSE,
+                ],
+                [
+                  'bg-success',
+                  'match_city',
+                  '=',
+                  TRUE,
+                ],
+              ],
             ],
             [
               'type' => 'field',
@@ -166,7 +196,6 @@ return [
           'actions' => [
             'setValid',
             'setInvalid',
-            'delete',
           ],
           'classes' => [
             'table',

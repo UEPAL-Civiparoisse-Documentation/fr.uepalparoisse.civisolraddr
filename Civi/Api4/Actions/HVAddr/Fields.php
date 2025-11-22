@@ -30,11 +30,12 @@ class Fields
       'dept' => [
         'name' => 'dept',
         'data_type' => 'String',
-        'title' => E::ts('Departement'),
+        'title' => E::ts('hvaddr_departement'),
         'sql_type' => 'varchar(255)',
         'input_type' => 'Select',
         'required' => FALSE,
         'description' => E::ts('Departement'),
+        'input_attrs' => ['label' =>E::ts('hvaddr_label_departement')],
         'pseudoconstant' => [
           'callback' => function () {
             return \CRM_Civisolraddr_SolrClient::singleton()->retrieveDepts();
@@ -44,13 +45,13 @@ class Fields
       'city' => [
         'name' => 'city',
         'data_type' => 'String',
-        'title' => E::ts('City'),
+        'title' => E::ts('hvaddr_city'),
         'required' => FALSE,
         'sql_type' => 'varchar(255)',
         'input_type' => 'ChainSelect',
         'input_attrs' => [
           'control_field' => 'dept',
-          'label' => E::ts('City'),
+          'label' => E::ts('hvaddr_label_city'),
         ],
         'pseudoconstant' => [
           'callback' => function ($fieldName, $avalues) {
@@ -70,13 +71,13 @@ class Fields
       'street' => [
         'name' => 'street',
         'data_type' => 'String',
-        'title' => E::ts('Street'),
+        'title' => E::ts('hvaddr_street'),
         'required' => FALSE,
         'sql_type' => 'varchar(512)',
         'input_type' => 'ChainSelect',
         'input_attrs' => [
           'control_field' => 'city',
-          'label' => E::ts('Street'),
+          'label' => E::ts('hvaddr_label_street'),
         ],
         'pseudoconstant' => [
           'callback' => function ($fieldName, $avalues) {
@@ -99,13 +100,13 @@ class Fields
       'numrep' => [
         'name' => 'numrep',
         'data_type' => 'String',
-        'title' => E::ts('numrep'),
+        'title' => E::ts('hvaddr_numrep'),
         'required' => FALSE,
         'sql_type' => 'varchar(1024)',
         'input_type' => 'ChainSelect',
         'input_attrs' => [
           'control_field' => 'street',
-          'label' => E::ts('Numrep'),
+          'label' => E::ts('hvaddr_label_numrep'),
         ],
         'pseudoconstant' => [
           'callback' => function ($fieldName, $avalues) {
@@ -127,13 +128,13 @@ class Fields
       'postcode' => [
         'name' => 'postcode',
         'data_type' => 'String',
-        'title' => E::ts('postcode'),
+        'title' => E::ts('hvaddr_postcode'),
         'required' => FALSE,
         'sql_type' => 'varchar(1024)',
         'input_type' => 'ChainSelect',
         'input_attrs' => [
           'control_field' => 'numrep',
-          'label' => E::ts('Postcode'),
+          'label' => E::ts('hvaddr_label_postcode'),
         ],
         'pseudoconstant' => [
           'callback' => function ($fieldName, $avalues) {

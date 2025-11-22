@@ -6,7 +6,7 @@ return [
     'name' => 'SavedSearch_Banaddr_Records_Common_data',
     'entity' => 'SavedSearch',
     'cleanup' => 'always',
-    'update' => 'unmodified',
+    'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
@@ -64,7 +64,7 @@ return [
     'name' => 'SavedSearch_Banaddr_Records_Common_data_SearchDisplay_Banaddr_Records_Common_data',
     'entity' => 'SearchDisplay',
     'cleanup' => 'always',
-    'update' => 'unmodified',
+    'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
@@ -90,17 +90,29 @@ return [
               'dataType' => 'String',
               'label' => E::ts('Adresse validée ?'),
               'sortable' => TRUE,
-              'rewrite' => '{if "[validation:value]"=="unchecked" }
-<p class="civisolraddr-validation-unchecked">[validation:label]</p>
-{elseif "[validation:value]"=="invalid" }
-<p class="civisolraddr-validation-invalid">[validation:label]</p>
-{elseif  "[validation:value]"=="stale" }
-<p class="civisolraddr-validation-stale" class="fa-times">[validation:label]</p>
-{elseif "[validation:value]"=="valid" }
-<p class="civisolraddr-validation-valid">[validation:label]</p>
-{else}
-<p class="civisolraddr-validation-default">[validation:label]</p>
-{/if}',
+              'cssRules' => [
+                [
+                  'bg-success',
+                  'validation:name',
+                  '=',
+                  'valid',
+                ],
+                [
+                  'bg-warning',
+                  'validation:name',
+                  '=',
+                  'unchecked',
+                ],
+                [
+                  'bg-danger',
+                  'validation:name',
+                  'IN',
+                  [
+                    'invalid',
+                    'stale',
+                  ],
+                ],
+              ],
             ],
             [
               'type' => 'field',
@@ -198,7 +210,7 @@ return [
               'label' => E::ts("Modifier l'adresse"),
             ],
           ],
-          'actions' => TRUE,
+          'actions' => ['setValid','setInvalid','setStale','setUnchecked'],
           'classes' => [
             'table',
             'table-striped',

@@ -6,7 +6,7 @@ return [
     'name' => 'SavedSearch_Banaddr_Invalid',
     'entity' => 'SavedSearch',
     'cleanup' => 'always',
-    'update' => 'unmodified',
+    'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
@@ -69,7 +69,7 @@ return [
     'name' => 'SavedSearch_Banaddr_Invalid_SearchDisplay_Banaddr_Invalid_Table',
     'entity' => 'SearchDisplay',
     'cleanup' => 'always',
-    'update' => 'unmodified',
+    'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
@@ -164,10 +164,7 @@ return [
               'label' => E::ts("Modifier l'adresse"),
             ],
           ],
-          'actions' => [
-            'download',
-            'delete',
-          ],
+          'actions' => [],
           'classes' => [
             'table',
             'table-striped',

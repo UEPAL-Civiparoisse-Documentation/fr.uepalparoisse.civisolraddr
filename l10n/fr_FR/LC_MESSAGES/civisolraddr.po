@@ -38,7 +38,7 @@ msgstr "code postal"
 
 #: Civi/Api4/Actions/HVAddr/Fields.php
 msgid "Postcode"
-msgstr "Code postal"
+msgstr "Code Postal"
 
 #: civisolraddr.php
 msgid "Set Valid"
@@ -247,11 +247,11 @@ msgstr ""
 
 #: schema/banaddr.entityType.php
 msgid "Banaddr"
-msgstr ""
+msgstr "Proposition d'adresse"
 
 #: schema/banaddr.entityType.php
 msgid "Banaddrs"
-msgstr ""
+msgstr "Propositions d'adresse"
 
 #: schema/banaddr.entityType.php
 msgid "BAN Addr records"
@@ -464,3 +464,39 @@ msgstr "Erroné"
 #: CRM/Civisolraddr/Banaddr/Validation.php
 msgid "stale"
 msgstr "Obsolète"
+
+msgid "hvaddr_departement"
+msgstr "Département"
+
+msgid "hvaddr_label_departement"
+msgstr "Département"
+
+msgid "hvaddr_city"
+msgstr "Ville"
+
+msgid "hvaddr_label_city"
+msgstr "Ville"
+
+msgid "hvaddr_street"
+msgstr "Rue"
+
+msgid "hvaddr_label_street"
+msgstr "Rue"
+
+msgid "hvaddr_numrep"
+msgstr "Numéro"
+
+msgid "hvaddr_label_numrep"
+msgstr "Numéro"
+
+msgid "hvaddr_postcode"
+msgstr "Code Postal"
+
+msgid "hvaddr_label_postcode"
+msgstr "Code Postal"
+
+msgid "match_street"
+msgstr "correspondance_rue"
+
+msgid "match_city"
+msgstr "correspondance_ville"

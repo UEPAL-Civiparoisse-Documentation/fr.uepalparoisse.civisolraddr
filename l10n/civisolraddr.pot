@@ -429,3 +429,39 @@ msgstr ""
 #: ./CRM/Civisolraddr/Banaddr/Validation.php
 msgid "stale"
 msgstr ""
+
+msgid "hvaddr_departement"
+msgstr ""
+
+msgid "hvaddr_label_departement"
+msgstr ""
+
+msgid "hvaddr_city"
+msgstr ""
+
+msgid "hvaddr_label_city"
+msgstr ""
+
+msgid "hvaddr_street"
+msgstr ""
+
+msgid "hvaddr_label_street"
+msgstr ""
+
+msgid "hvaddr_numrep"
+msgstr ""
+
+msgid "hvaddr_label_numrep"
+msgstr ""
+
+msgid "hvaddr_postcode"
+msgstr ""
+
+msgid "hvaddr_label_postcode"
+msgstr ""
+
+msgid "match_street"
+msgstr ""
+
+msgid "match_city"
+msgstr ""
