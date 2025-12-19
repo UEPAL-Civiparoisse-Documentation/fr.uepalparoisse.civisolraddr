@@ -78,7 +78,7 @@ return [
     'html_type'=>"text",
     'title'=>E::ts('registered cores'),
     'description'=>E::ts('Registered cores by departement - json object'),
-    'default'=>'{"67":"core_67_active","68":"core_68_active","54":"core_54_active","55":"core_55_active","57":"core_57_active","88":"core_88_active"}',
+    'default'=>'{"67":"core_67_active","68":"core_68_active","54":"core_54_active","55":"core_55_active","57":"core_57_active","88":"core_88_active","70":"core_70_active","25":"core_25_active","90":"core_90_active"}',
     'is_domain'=>1,
     'is_contact'=>0,
     'settings_pages'=>['civisolraddr'=>['weight'=>60]]
