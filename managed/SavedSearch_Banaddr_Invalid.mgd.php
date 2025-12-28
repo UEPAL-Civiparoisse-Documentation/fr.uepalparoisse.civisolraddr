@@ -148,10 +148,10 @@ return [
               'links' => [
                 [
                   'entity' => 'Contact',
-                  'action' => 'update',
+                  'action' => 'view',
                   'join' => 'Banaddr_Address_addr_id_01_Address_Contact_contact_id_01',
-                  'target' => '',
-                  'icon' => 'fa-pencil',
+                  'target' => '_blank',
+                  'icon' => 'fa-external-link',
                   'text' => E::ts("Modifier l'adresse"),
                   'style' => 'default',
                   'path' => '',
