@@ -120,6 +120,7 @@ return [
               'dataType' => 'Integer',
               'label' => E::ts('Proposition : numéro'),
               'sortable' => TRUE,
+              'alignment' => 'text-right',
             ],
             [
               'type' => 'field',
