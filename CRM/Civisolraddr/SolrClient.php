@@ -191,34 +191,44 @@ class CRM_Civisolraddr_SolrClient implements CRM_Civisolraddr_ISolrClient
 
   }
 
+  protected function retrieveBANAux(CRM_Civisolraddr_Banaddr_Query $query, CRM_Civisolraddr_QueryOperator $operator): array
+  {
+    $ret = [];
+    if ($query && $query->getCity() && $query->getAddr() && $query->getDept() && $this->isEnabled()
+      && $this->isDepartementAvailable($query->getDept())
+    ) {
+      $citySuggests = $this->suggest($query->getCity(), $query->getDept());
+      if (count($citySuggests) > 0) {
+        $city = $citySuggests[0];
+        $client = $this->getSolrClient();
+        $core = $this->retrieveCore($query->getDept());
+        $handler = join('/', [$this->retrieveCore($query->getDept()), $this->getSearchHandler()]);
+        $client->setServlet(SolrClient::SEARCH_SERVLET_TYPE, $handler);
+        $q = new SolrQuery(SolrUtils::escapeQueryChars($query->getAddr()));
+        $q->addFilterQuery("nom_commune:" . SolrUtils::queryPhrase($city));
+        $q->addParam('q.op', $operator->value);
+        $response = $client->query($q);
+        $response->setParseMode(SolrResponse::PARSE_SOLR_DOC);
+        $solrObj = $response->getResponse();
+        $docs = $solrObj["response"]["docs"];
+        foreach ($docs as $doc) {
+          $ret[] = new CRM_Civisolraddr_Banaddr_Document($doc);
+        }
+      }
+    }
+    return $ret;
+  }
+
   public function retrieveBAN(CRM_Civisolraddr_Banaddr_Query $query): array
   {
     $ret = [];
     try {
-
-
-      if ($query && $query->getCity() && $query->getAddr() && $query->getDept() && $this->isEnabled()
-        && $this->isDepartementAvailable($query->getDept())
-        )
-      {
-        $citySuggests=$this->suggest($query->getCity(), $query->getDept());
-        if(count($citySuggests)>0) {
-          $city=$citySuggests[0];
-          $client = $this->getSolrClient();
-          $core = $this->retrieveCore($query->getDept());
-          $handler = join('/', [$this->retrieveCore($query->getDept()), $this->getSearchHandler()]);
-          $client->setServlet(SolrClient::SEARCH_SERVLET_TYPE, $handler);
-          $q = new SolrQuery(SolrUtils::escapeQueryChars($query->getAddr()));
-          $q->addFilterQuery("nom_commune:" . SolrUtils::queryPhrase($city));
-          $response = $client->query($q);
-          $response->setParseMode(SolrResponse::PARSE_SOLR_DOC);
-          $solrObj = $response->getResponse();
-          $docs = $solrObj["response"]["docs"];
-          foreach ($docs as $doc) {
-            $ret[] = new CRM_Civisolraddr_Banaddr_Document($doc);
-          }
-        }
+      $ret = $this->retrieveBANAux($query, CRM_Civisolraddr_QueryOperator::QOP_AND);
+      if (empty($ret)) {
+        $ret = $this->retrieveBANAux($query, CRM_Civisolraddr_QueryOperator::QOP_OR);
       }
+
+
     } catch (Exception $e) {
       CRM_Core_Session::setStatus($e->__toString(), "error");
       Civi::log()->error($e->__toString());
@@ -315,7 +325,7 @@ class CRM_Civisolraddr_SolrClient implements CRM_Civisolraddr_ISolrClient
         $q->setFacetMinCount(1);
         $q->setFacetMissing(false);
         $q->addFacetField('voie_facet');
-        $q->addFilterQuery("nom_commune:" . SolrUtils::queryPhrase($city));
+        $q->addFilterQuery("ville_facet:" . SolrUtils::queryPhrase($city));
         $response = $client->query($q);
         $response->setParseMode(SolrResponse::PARSE_SOLR_OBJ);
         $solrObj = $response->getResponse();
@@ -351,8 +361,8 @@ class CRM_Civisolraddr_SolrClient implements CRM_Civisolraddr_ISolrClient
         $q->setFacetMinCount(1);
         $q->setFacetMissing(false);
         $q->addFacetField('numero_rep_facet');
-        $q->addFilterQuery("nom_commune:" . SolrUtils::queryPhrase($city));
-        $q->addFilterQuery("nom_voie:" . SolrUtils::queryPhrase($street));
+        $q->addFilterQuery("ville_facet:" . SolrUtils::queryPhrase($city));
+        $q->addFilterQuery("voie_facet:" . SolrUtils::queryPhrase($street));
         $response = $client->query($q);
         $response->setParseMode(SolrResponse::PARSE_SOLR_OBJ);
         $solrObj = $response->getResponse();
@@ -389,9 +399,9 @@ class CRM_Civisolraddr_SolrClient implements CRM_Civisolraddr_ISolrClient
         $q->setFacetMinCount(1);
         $q->setFacetMissing(false);
         $q->addFacetField('code_postal_facet');
-        $q->addFilterQuery("nom_commune:" . SolrUtils::queryPhrase($city));
-        $q->addFilterQuery("nom_voie:" . SolrUtils::queryPhrase($street));
-        $q->addFilterQuery("numero_rep:" . SolrUtils::queryPhrase($numrep));
+        $q->addFilterQuery("ville_facet:" . SolrUtils::queryPhrase($city));
+        $q->addFilterQuery("voie_facet:" . SolrUtils::queryPhrase($street));
+        $q->addFilterQuery("numero_rep_facet:" . SolrUtils::queryPhrase($numrep));
 
         $response = $client->query($q);
         $response->setParseMode(SolrResponse::PARSE_SOLR_OBJ);

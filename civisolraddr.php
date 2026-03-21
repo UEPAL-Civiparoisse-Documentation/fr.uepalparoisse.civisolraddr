@@ -84,6 +84,18 @@ function civisolraddr_civicrm_post(string $op, string $objectName, int $objectId
 
         if ($objectName == "Address" && ($op == "create" || $op == "update" || $op == "edit") && $objectRef instanceof CRM_Core_BAO_Address) {
           CRM_Civisolraddr_SolrClient::singleton()->syncAddress($objectRef,true);
+
+          //also initiate sync on subaddresses
+          $query="SELECT id as id from civicrm_address where master_id=%1";
+          $subaddressIds=CRM_Core_DAO::executeQuery($query,[1=>[$objectRef->id,'Integer']])->fetchAll();
+          foreach($subaddressIds as $subaddressId)
+          {
+           $addr=new CRM_Core_BAO_Address();
+           $addr->id=$subaddressId['id'];
+           $addr->find(true);
+           CRM_Civisolraddr_SolrClient::singleton()->syncAddress($addr,true);
+          }
+
         }
     } catch (Exception $e) {
         Civi::log()->error($e->__toString());
